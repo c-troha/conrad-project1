@@ -1,0 +1,9 @@
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.deps.json
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.dll
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.pdb
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.csprojAssemblyReference.cache
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.csproj.CoreCompileInputs.cache
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.AssemblyInfoInputs.cache
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.AssemblyInfo.cs
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.dll
+C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.pdb
