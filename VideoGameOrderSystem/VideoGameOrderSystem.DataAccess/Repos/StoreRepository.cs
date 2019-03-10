@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using VideoGameOrderSystem.Models;
+using VideoGameOrderSystem.Library;
 
 namespace VideoGameOrderSystem.DataAccess.Repos
 {
@@ -15,13 +15,13 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public void AddStore(Models.Location store)
+        public void AddStore(Library.Location store)
         {
             _dbContext.Add(Mapping.Map(store));
             _dbContext.SaveChanges();
         }
 
-        public IEnumerable<Models.Location> GetAllStores()
+        public IEnumerable<Library.Location> GetAllStores()
         {
             List<Location> stores = new List<Location>();
 
@@ -33,12 +33,12 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             return stores;
         }
 
-        public Models.Location GetStoreById(int id)
+        public Library.Location GetStoreById(int id)
         {
             return Mapping.Map(_dbContext.Store.First(s => s.Id == id));
         }
 
-        public Models.Location GetStoreByName(string name)
+        public Library.Location GetStoreByName(string name)
         {
             return Mapping.Map(_dbContext.Store.First(s => s.Name.Equals(name)));
         }
@@ -62,9 +62,9 @@ namespace VideoGameOrderSystem.DataAccess.Repos
         }
 
         //---------------------- Inventory Handling ----------------------------------------
-        public IEnumerable<Models.Inventory> GetInventory(int storeId)
+        public IEnumerable<Library.Inventory> GetInventory(int storeId)
         {
-            List<Models.Inventory> inv = new List<Models.Inventory>();
+            List<Library.Inventory> inv = new List<Library.Inventory>();
 
             foreach (Inventory item in _dbContext.Inventory)
             {
@@ -77,14 +77,14 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             return inv;
         }
 
-        public IEnumerable<Models.Product> GetInventoryProducts(IEnumerable<Models.Inventory> inv)
+        public IEnumerable<Library.Product> GetInventoryProducts(IEnumerable<Library.Inventory> inv)
         {
-            var products = new List<Models.Product>();
-            var inventory = new List<Models.Inventory>(inv);
+            var products = new List<Library.Product>();
+            var inventory = new List<Library.Inventory>(inv);
 
             foreach (Iproduct p in _dbContext.Iproduct)
             {
-                foreach (Models.Inventory i in inventory)
+                foreach (Library.Inventory i in inventory)
                 {
                     if(p.Id == i.ProductId)
                         products.Add(Mapping.MapI(p));
@@ -101,7 +101,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
 
         public void AddInventory(int storeId, int productId)
         {
-            var inventory = new Models.Inventory();
+            var inventory = new Library.Inventory();
 
             inventory.StoreId = storeId;
             inventory.ProductId = productId;
@@ -119,7 +119,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
 
         public void AddProduct(int storeId)
         {
-            var product = new Models.Product();
+            var product = new Library.Product();
 
             string name;
             while (true)

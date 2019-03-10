@@ -7,15 +7,15 @@ namespace VideoGameOrderSystem.DataAccess.Repos
 {
     public interface IStoreRepository
     {
-        IEnumerable<Models.Location> GetAllStores();
-        Models.Location GetStoreById(int id);
-        Models.Location GetStoreByName(string name);
-        void AddStore(Models.Location store);
+        IEnumerable<Library.Location> GetAllStores();
+        Library.Location GetStoreById(int id);
+        Library.Location GetStoreByName(string name);
+        void AddStore(Library.Location store);
         void RemoveStore(int id);
 
         //Inventory Handling
-        IEnumerable<Models.Inventory> GetInventory(int storeId);
-        IEnumerable<Models.Product> GetInventoryProducts(IEnumerable<Models.Inventory> inv);
+        IEnumerable<Library.Inventory> GetInventory(int storeId);
+        IEnumerable<Library.Product> GetInventoryProducts(IEnumerable<Library.Inventory> inv);
         bool InventoryIsEmpty(int storeId);
         void AddInventory(int storeId, int productId);
         void RemoveInventory(int storeId, int productId);

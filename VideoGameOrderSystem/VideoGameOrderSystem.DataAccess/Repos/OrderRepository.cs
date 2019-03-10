@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using VideoGameOrderSystem.Models;
+using VideoGameOrderSystem.Library;
 
 namespace VideoGameOrderSystem.DataAccess.Repos
 {
@@ -56,14 +56,14 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             }
         }
 
-        public float OrderTotal(int orderID, IEnumerable<Models.OrderItems> oI, IEnumerable<Models.Product> p)
+        public float OrderTotal(int orderID, IEnumerable<Library.OrderItems> oI, IEnumerable<Library.Product> p)
         {
             var items = oI.ToList();
             var products = p.ToList();
             float temp = 0;
             float total = 0;
 
-            foreach (Models.OrderItems item in items)
+            foreach (Library.OrderItems item in items)
             {
                 if(item.OrderId == orderID)
                 {
@@ -86,7 +86,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             Console.WriteLine($"Order History: {customer.FirstName} {customer.LastName}");
             Console.WriteLine();
 
-            foreach (Models.Order o in orders)
+            foreach (Library.Order o in orders)
             {
                 var items = GetOrderItems(o.Id);
                 var products = GetOrderProducts(items);
@@ -97,7 +97,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
                 Console.WriteLine("{0,-10}{1,-25}{2,-15}{3,-10}{4,-25}{5,-10}",
                     "--", "----", "--------", "-----", "-----------", "-----");
 
-                foreach (Models.Product p in products)
+                foreach (Library.Product p in products)
                 {
                     Console.WriteLine("{0,-10}{1,-25}{2,-15}{3,-10}{4,-25}{5,-10}",
                         p.Id, p.Name, items.First(i => i.ProductId == p.Id).Quantity,
@@ -120,7 +120,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             Console.WriteLine($"Order History: {store.Name}");
             Console.WriteLine();
 
-            foreach (Models.Order o in orders)
+            foreach (Library.Order o in orders)
             {
                 var items = GetOrderItems(o.Id);
                 var products = GetOrderProducts(items);
@@ -131,7 +131,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
                 Console.WriteLine("{0,-10}{1,-25}{2,-15}{3,-10}{4,-25}{5,-10}",
                     "--", "----", "--------", "-----", "-----------", "--------");
 
-                foreach (Models.Product p in products)
+                foreach (Library.Product p in products)
                 {
                     var customer = _dbContext.Customer.First(c => c.Id == o.CustomerId);
                     Console.WriteLine("{0,-10}{1,-25}{2,-15}{3,-10}{4,-25}{5,-10}",
@@ -147,9 +147,9 @@ namespace VideoGameOrderSystem.DataAccess.Repos
         }
 
         // Order handling
-        public IEnumerable<Models.OrderItems> GetOrderItems(int orderId)
+        public IEnumerable<Library.OrderItems> GetOrderItems(int orderId)
         {
-            List<Models.OrderItems> order = new List<Models.OrderItems>();
+            List<Library.OrderItems> order = new List<Library.OrderItems>();
 
             foreach (OrderItems item in _dbContext.OrderItems)
             {
@@ -162,14 +162,14 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             return order;
         }
 
-        public IEnumerable<Product> GetOrderProducts(IEnumerable<Models.OrderItems> oI)
+        public IEnumerable<Product> GetOrderProducts(IEnumerable<Library.OrderItems> oI)
         {
-            var products = new List<Models.Product>();
-            var orderItems = new List<Models.OrderItems>(oI);
+            var products = new List<Library.Product>();
+            var orderItems = new List<Library.OrderItems>(oI);
 
             foreach (Oproduct p in _dbContext.Oproduct)
             {
-                foreach (Models.OrderItems i in orderItems)
+                foreach (Library.OrderItems i in orderItems)
                 {
                     if (p.Id == i.ProductId)
                         products.Add(Mapping.MapO(p));
@@ -186,7 +186,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
 
         public void AddOrderItems(int orderId, int productId)
         {
-            var orderItems = new Models.OrderItems();
+            var orderItems = new Library.OrderItems();
 
             orderItems.OrderId = orderId;
             orderItems.ProductId = productId;
@@ -241,11 +241,11 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             _dbContext.SaveChanges();
         }
 
-        public void AddProduct(int orderId, Models.Product p)
+        public void AddProduct(int orderId, Library.Product p)
         {
             if (!_dbContext.Oproduct.Any(s => s.Name == p.Name))
             {
-                var product = new Models.Product();
+                var product = new Library.Product();
 
                 product.Name = p.Name;
                 product.Price = (float)p.Price;
@@ -279,7 +279,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             }
         }
 
-        public Models.Product getProductByName(string name)
+        public Library.Product getProductByName(string name)
         {
             return Mapping.MapO(_dbContext.Oproduct.First(p => p.Name.Equals(name)));
         }
@@ -295,16 +295,16 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             float temp = 0;
             int count = 0;
 
-            Models.Customer best = new Models.Customer();
+            Library.Customer best = new Library.Customer();
 
             var customerRepo = new CustomerRepository(_dbContext);
 
             var customers = customerRepo.GetAll().ToList();
             var orders = GetAllOrders();
 
-            foreach (Models.Customer c in customers)
+            foreach (Library.Customer c in customers)
             {
-                foreach (Models.Order o in orders.Where(ord => ord.CustomerId == c.Id))
+                foreach (Library.Order o in orders.Where(ord => ord.CustomerId == c.Id))
                 {
                     var items = GetOrderItems(o.Id).ToList();
                     var products = GetOrderProducts(items);
@@ -335,16 +335,16 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             float high = 0;
             float temp = 0;
 
-            Models.Customer best = new Models.Customer();
+            Library.Customer best = new Library.Customer();
 
             var customerRepo = new CustomerRepository(_dbContext);
 
             var customers = customerRepo.GetAll().ToList();
             var orders = GetAllOrders();
 
-            foreach (Models.Customer c in customers)
+            foreach (Library.Customer c in customers)
             {
-                foreach (Models.Order o in orders.Where(ord => ord.CustomerId == c.Id))
+                foreach (Library.Order o in orders.Where(ord => ord.CustomerId == c.Id))
                 {
                     var items = GetOrderItems(o.Id).ToList();
                     var products = GetOrderProducts(items);
@@ -370,16 +370,16 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             float high = 0;
             float temp = 0;
 
-            Models.Customer best = new Models.Customer();
+            Library.Customer best = new Library.Customer();
 
             var customerRepo = new CustomerRepository(_dbContext);
 
             var customers = customerRepo.GetAll().ToList();
             var orders = GetAllOrders();
 
-            foreach (Models.Customer c in customers)
+            foreach (Library.Customer c in customers)
             {
-                foreach (Models.Order o in orders.Where(ord => ord.CustomerId == c.Id))
+                foreach (Library.Order o in orders.Where(ord => ord.CustomerId == c.Id))
                 { 
                     temp++;
                 }

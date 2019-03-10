@@ -6,6 +6,9 @@ namespace VideoGameOrderSystem.DataAccess
 {
     public partial class OrderSystemContext : DbContext
     {
+        public virtual DbSet<Library.Customer> Restaurant { get; set; }
+        public virtual DbSet<Library.Location> Review { get; set; }
+
         public OrderSystemContext()
         {
         }

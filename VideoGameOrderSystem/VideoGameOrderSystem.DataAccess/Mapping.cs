@@ -7,19 +7,19 @@ namespace VideoGameOrderSystem.DataAccess
 {
     class Mapping
     {
-        public static Models.Location Map(Store store) => new Models.Location
+        public static Library.Location Map(Store store) => new Library.Location
         {
             LocationId = store.Id,
             Name = store.Name,
         };
 
-        public static Store Map(Models.Location store) => new Store
+        public static Store Map(Library.Location store) => new Store
         {
             Id = store.LocationId,
             Name = store.Name,
         };
 
-        public static Models.Customer Map(Customer customer) => new Models.Customer
+        public static Library.Customer Map(Customer customer) => new Library.Customer
         {
             Id = customer.Id,
             FirstName = customer.FirstName,
@@ -28,7 +28,7 @@ namespace VideoGameOrderSystem.DataAccess
             StoreId = customer.StoreId,
         };
 
-        public static Customer Map(Models.Customer customer) => new Customer
+        public static Customer Map(Library.Customer customer) => new Customer
         {
             Id = customer.Id,
             FirstName = customer.FirstName,
@@ -37,7 +37,7 @@ namespace VideoGameOrderSystem.DataAccess
             StoreId = customer.StoreId,
         };
 
-        public static Models.Order Map(Orders order) => new Models.Order
+        public static Library.Order Map(Orders order) => new Library.Order
         {
             Id = order.Id,
             StoreId = order.StoreId,
@@ -45,7 +45,7 @@ namespace VideoGameOrderSystem.DataAccess
             TimePlaced = order.TimePlaced
         };
 
-        public static Orders Map(Models.Order order) => new Orders
+        public static Orders Map(Library.Order order) => new Orders
         {
             Id = order.Id,
             StoreId = order.StoreId,
@@ -53,63 +53,63 @@ namespace VideoGameOrderSystem.DataAccess
             TimePlaced = order.TimePlaced
         };
 
-        public static Models.OrderItems Map(OrderItems order) => new Models.OrderItems
+        public static Library.OrderItems Map(OrderItems order) => new Library.OrderItems
         {
             OrderId = order.OrderId,
             Quantity = order.Quantity,
             ProductId = order.ProductId
         };
 
-        public static OrderItems Map(Models.OrderItems order) => new OrderItems
+        public static OrderItems Map(Library.OrderItems order) => new OrderItems
         {
             OrderId = order.OrderId,
             Quantity = order.Quantity,
             ProductId = order.ProductId
         };
 
-        public static Models.Inventory Map(Inventory inv) => new Models.Inventory
+        public static Library.Inventory Map(Inventory inv) => new Library.Inventory
         {
             StoreId = inv.StoreId,
             ProductId = inv.ProductId,
             Quantity = inv.Quantity
         };
 
-        public static Inventory Map(Models.Inventory inv) => new Inventory
+        public static Inventory Map(Library.Inventory inv) => new Inventory
         {
             StoreId = inv.StoreId,
             ProductId = inv.ProductId,
             Quantity = inv.Quantity
         };
 
-        public static Models.Product MapI(Iproduct product) => new Models.Product
+        public static Library.Product MapI(Iproduct product) => new Library.Product
         {
            Id = product.Id,
            Name = product.Name,
            Price = (float)product.Price
         };
 
-        public static Iproduct MapI(Models.Product product) => new Iproduct
+        public static Iproduct MapI(Library.Product product) => new Iproduct
         {
             Id = product.Id,
             Name = product.Name,
             Price = (decimal)product.Price
         };
 
-        public static Models.Product MapO(Oproduct product) => new Models.Product
+        public static Library.Product MapO(Oproduct product) => new Library.Product
         {
             Id = product.Id,
             Name = product.Name,
             Price = (float)product.Price
         };
 
-        public static Oproduct MapO(Models.Product product) => new Oproduct
+        public static Oproduct MapO(Library.Product product) => new Oproduct
         {
             Id = product.Id,
             Name = product.Name,
             Price = (decimal)product.Price
         };
 
-        public static IEnumerable<Models.Order> Map(IEnumerable<Orders> orders) => orders.Select(Map);
-        public static IEnumerable<Orders> Map(IEnumerable<Models.Order> orders) => orders.Select(Map);
+        public static IEnumerable<Library.Order> Map(IEnumerable<Orders> orders) => orders.Select(Map);
+        public static IEnumerable<Orders> Map(IEnumerable<Library.Order> orders) => orders.Select(Map);
     }
 }

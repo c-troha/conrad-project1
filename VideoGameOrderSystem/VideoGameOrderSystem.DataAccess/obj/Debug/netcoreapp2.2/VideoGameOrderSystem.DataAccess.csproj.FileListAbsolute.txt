@@ -10,3 +10,15 @@ C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess
 C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.dll
 C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.pdb
 C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.csproj.CopyComplete
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.deps.json
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.dll
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.pdb
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.csprojAssemblyReference.cache
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.csproj.CoreCompileInputs.cache
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.AssemblyInfoInputs.cache
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.AssemblyInfo.cs
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.csproj.CopyComplete
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.dll
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.DataAccess.pdb
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.dll
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.DataAccess\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Library.pdb

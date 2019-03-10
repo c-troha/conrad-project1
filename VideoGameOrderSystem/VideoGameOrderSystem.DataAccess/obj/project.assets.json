@@ -907,14 +907,14 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "VideoGameOrderSystem.Models/1.0.0": {
+      "VideoGameOrderSystem.Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
-          "bin/placeholder/VideoGameOrderSystem.Models.dll": {}
+          "bin/placeholder/VideoGameOrderSystem.Library.dll": {}
         },
         "runtime": {
-          "bin/placeholder/VideoGameOrderSystem.Models.dll": {}
+          "bin/placeholder/VideoGameOrderSystem.Library.dll": {}
         }
       }
     }
@@ -3469,17 +3469,17 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "VideoGameOrderSystem.Models/1.0.0": {
+    "VideoGameOrderSystem.Library/1.0.0": {
       "type": "project",
-      "path": "../VideoGameOrderSystem.Library/VideoGameOrderSystem.Models.csproj",
-      "msbuildProject": "../VideoGameOrderSystem.Library/VideoGameOrderSystem.Models.csproj"
+      "path": "../VideoGameOrderSystem.Library/VideoGameOrderSystem.Library.csproj",
+      "msbuildProject": "../VideoGameOrderSystem.Library/VideoGameOrderSystem.Library.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.2",
       "Microsoft.NETCore.App >= 2.2.0",
-      "VideoGameOrderSystem.Models >= 1.0.0"
+      "VideoGameOrderSystem.Library >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3489,11 +3489,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\revature\\conrad-project0\\VideoGameOrderSystem\\VideoGameOrderSystem.DataAccess\\VideoGameOrderSystem.DataAccess.csproj",
+      "projectUniqueName": "C:\\revature\\conrad-project1\\VideoGameOrderSystem\\VideoGameOrderSystem.DataAccess\\VideoGameOrderSystem.DataAccess.csproj",
       "projectName": "VideoGameOrderSystem.DataAccess",
-      "projectPath": "C:\\revature\\conrad-project0\\VideoGameOrderSystem\\VideoGameOrderSystem.DataAccess\\VideoGameOrderSystem.DataAccess.csproj",
+      "projectPath": "C:\\revature\\conrad-project1\\VideoGameOrderSystem\\VideoGameOrderSystem.DataAccess\\VideoGameOrderSystem.DataAccess.csproj",
       "packagesPath": "C:\\Users\\conra\\.nuget\\packages\\",
-      "outputPath": "C:\\revature\\conrad-project0\\VideoGameOrderSystem\\VideoGameOrderSystem.DataAccess\\obj\\",
+      "outputPath": "C:\\revature\\conrad-project1\\VideoGameOrderSystem\\VideoGameOrderSystem.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3512,8 +3512,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\revature\\conrad-project0\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\VideoGameOrderSystem.Models.csproj": {
-              "projectPath": "C:\\revature\\conrad-project0\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\VideoGameOrderSystem.Models.csproj"
+            "C:\\revature\\conrad-project1\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\VideoGameOrderSystem.Library.csproj": {
+              "projectPath": "C:\\revature\\conrad-project1\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\VideoGameOrderSystem.Library.csproj"
             }
           }
         }

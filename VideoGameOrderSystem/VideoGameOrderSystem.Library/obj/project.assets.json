@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\revature\\conrad-project0\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\VideoGameOrderSystem.Models.csproj",
-      "projectName": "VideoGameOrderSystem.Models",
-      "projectPath": "C:\\revature\\conrad-project0\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\VideoGameOrderSystem.Models.csproj",
+      "projectUniqueName": "C:\\revature\\conrad-project1\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\VideoGameOrderSystem.Library.csproj",
+      "projectName": "VideoGameOrderSystem.Library",
+      "projectPath": "C:\\revature\\conrad-project1\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\VideoGameOrderSystem.Library.csproj",
       "packagesPath": "C:\\Users\\conra\\.nuget\\packages\\",
-      "outputPath": "C:\\revature\\conrad-project0\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\obj\\",
+      "outputPath": "C:\\revature\\conrad-project1\\VideoGameOrderSystem\\VideoGameOrderSystem.Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

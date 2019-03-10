@@ -9,9 +9,8 @@
       "VideoGameOrderSystem.Test/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "15.9.0",
-          "VideoGameOrderSystem.ConsoleApp": "1.0.0",
           "VideoGameOrderSystem.DataAccess": "1.0.0",
-          "VideoGameOrderSystem.Models": "1.0.0",
+          "VideoGameOrderSystem.Library": "1.0.0",
           "xunit": "2.4.0",
           "xunit.runner.visualstudio": "2.4.0"
         },
@@ -1371,28 +1370,18 @@
           "Microsoft.NET.Test.Sdk": "15.9.0"
         }
       },
-      "VideoGameOrderSystem.ConsoleApp/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.2",
-          "VideoGameOrderSystem.DataAccess": "1.0.0",
-          "VideoGameOrderSystem.Models": "1.0.0"
-        },
-        "runtime": {
-          "VideoGameOrderSystem.ConsoleApp.dll": {}
-        }
-      },
       "VideoGameOrderSystem.DataAccess/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.2",
-          "VideoGameOrderSystem.Models": "1.0.0"
+          "VideoGameOrderSystem.Library": "1.0.0"
         },
         "runtime": {
           "VideoGameOrderSystem.DataAccess.dll": {}
         }
       },
-      "VideoGameOrderSystem.Models/1.0.0": {
+      "VideoGameOrderSystem.Library/1.0.0": {
         "runtime": {
-          "VideoGameOrderSystem.Models.dll": {}
+          "VideoGameOrderSystem.Library.dll": {}
         }
       }
     }
@@ -2152,17 +2141,12 @@
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
-    "VideoGameOrderSystem.ConsoleApp/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "VideoGameOrderSystem.DataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "VideoGameOrderSystem.Models/1.0.0": {
+    "VideoGameOrderSystem.Library/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

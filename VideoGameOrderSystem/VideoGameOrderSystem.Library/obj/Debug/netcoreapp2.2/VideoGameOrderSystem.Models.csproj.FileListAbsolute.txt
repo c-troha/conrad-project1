@@ -7,3 +7,12 @@ C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\ob
 C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.AssemblyInfo.cs
 C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.dll
 C:\revature\conrad-project0\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.pdb
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.deps.json
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.dll
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\bin\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.pdb
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.csprojAssemblyReference.cache
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.csproj.CoreCompileInputs.cache
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.AssemblyInfoInputs.cache
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.AssemblyInfo.cs
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.dll
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.Library\obj\Debug\netcoreapp2.2\VideoGameOrderSystem.Models.pdb

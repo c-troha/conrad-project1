@@ -7,24 +7,24 @@ namespace VideoGameOrderSystem.DataAccess.Repos
     public interface IOrderRepository
     {
         // Logic to handle the placement of orders
-        IEnumerable<Models.Order> GetAllOrders();
-        Models.Order GetOrderById(int id);
-        void AddOrder(Models.Order order);
+        IEnumerable<Library.Order> GetAllOrders();
+        Library.Order GetOrderById(int id);
+        void AddOrder(Library.Order order);
         void RemoveOrder(int id);
-        float OrderTotal(int orderID, IEnumerable<Models.OrderItems> oI, 
-            IEnumerable<Models.Product> p);
+        float OrderTotal(int orderID, IEnumerable<Library.OrderItems> oI, 
+            IEnumerable<Library.Product> p);
 
-        IEnumerable<Models.OrderItems> GetOrderItems(int orderId);
-        IEnumerable<Models.Product> GetOrderProducts(IEnumerable<Models.OrderItems> oI);
+        IEnumerable<Library.OrderItems> GetOrderItems(int orderId);
+        IEnumerable<Library.Product> GetOrderProducts(IEnumerable<Library.OrderItems> oI);
         bool OrderIsEmpty(int orderId);
         void AddOrderItems(int orderId, int productId);
         void RemoveOrderItems(int orderId, int productId);
         void AddToOrder(int orderId, int storeId, int productId, int val);
         void RemoveFromOrder(int orderId, int storeId, int productId, int val);
-        void AddProduct(int orderId, Models.Product p);
+        void AddProduct(int orderId, Library.Product p);
         void RemoveProduct(int orderId, int id);
 
-        Models.Product getProductByName(string name);
+        Library.Product getProductByName(string name);
         bool checkProduct(int productId, int orderId);
 
         void PrintCustomerHistory(int customerID);

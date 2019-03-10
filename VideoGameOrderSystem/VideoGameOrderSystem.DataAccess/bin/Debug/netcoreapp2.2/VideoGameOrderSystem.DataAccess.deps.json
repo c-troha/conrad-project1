@@ -9,7 +9,7 @@
       "VideoGameOrderSystem.DataAccess/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.2",
-          "VideoGameOrderSystem.Models": "1.0.0"
+          "VideoGameOrderSystem.Library": "1.0.0"
         },
         "runtime": {
           "VideoGameOrderSystem.DataAccess.dll": {}
@@ -501,9 +501,9 @@
           "System.Runtime": "4.1.0"
         }
       },
-      "VideoGameOrderSystem.Models/1.0.0": {
+      "VideoGameOrderSystem.Library/1.0.0": {
         "runtime": {
-          "VideoGameOrderSystem.Models.dll": {}
+          "VideoGameOrderSystem.Library.dll": {}
         }
       }
     }
@@ -885,7 +885,7 @@
       "path": "system.threading.tasks/4.0.11",
       "hashPath": "system.threading.tasks.4.0.11.nupkg.sha512"
     },
-    "VideoGameOrderSystem.Models/1.0.0": {
+    "VideoGameOrderSystem.Library/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
