@@ -11,8 +11,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
         Library.Order GetOrderById(int id);
         void AddOrder(Library.Order order);
         void RemoveOrder(int id);
-        float OrderTotal(int orderID, IEnumerable<Library.OrderItems> oI, 
-            IEnumerable<Library.Product> p);
+        float OrderTotal(int orderID);
 
         IEnumerable<Library.OrderItems> GetOrderItems(int orderId);
         IEnumerable<Library.Product> GetOrderProducts(IEnumerable<Library.OrderItems> oI);

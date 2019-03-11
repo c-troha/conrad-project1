@@ -22,6 +22,8 @@ namespace VideoGameOrderSystem.App.Models.ViewModels
         [Display(Name = "Current Store")]
         public Library.Location Store { get; set; }
 
+        public List<Library.Order> OrderHistory { get; set; }
+        public List<float> OrderTotals { get; set; }
 
 
         public CustomerViewModel(Library.Customer customer, Library.Location store)

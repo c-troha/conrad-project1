@@ -53,7 +53,7 @@ namespace VideoGameOrderSystem.App.Controllers
                 Price = (decimal)x.Price,
                 Quantity = libOrderItems.First(i => i.ProductId == x.Id && i.OrderId == order.Id).Quantity,
                 Ivm = ivm,
-                Total = OrderRepo.OrderTotal(order.Id, libOrderItems, libOrderProducts)
+                Total = OrderRepo.OrderTotal(order.Id)
 
             });
 

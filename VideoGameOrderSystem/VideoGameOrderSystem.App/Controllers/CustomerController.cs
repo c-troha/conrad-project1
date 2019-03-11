@@ -14,12 +14,15 @@ namespace VideoGameOrderSystem.App
     {
         public DataAccess.Repos.ICustomerRepository CustomerRepo { get; }
         public DataAccess.Repos.IStoreRepository StoreRepo { get; }
+        public DataAccess.Repos.IOrderRepository OrderRepo { get; }
 
         public CustomerController(DataAccess.Repos.ICustomerRepository cRepo,
-                                  DataAccess.Repos.IStoreRepository sRepo)
+                                  DataAccess.Repos.IStoreRepository sRepo,
+                                  DataAccess.Repos.IOrderRepository oRepo)
         {
             CustomerRepo = cRepo;
             StoreRepo = sRepo;
+            OrderRepo = oRepo;
         }
 
         // GET: Customer

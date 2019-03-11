@@ -56,10 +56,10 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             }
         }
 
-        public float OrderTotal(int orderID, IEnumerable<Library.OrderItems> oI, IEnumerable<Library.Product> p)
+        public float OrderTotal(int orderID)
         {
-            var items = oI.ToList();
-            var products = p.ToList();
+            var items = GetOrderItems(orderID).ToList();
+            var products = GetOrderProducts(items).ToList();
             float temp = 0;
             float total = 0;
 
@@ -106,7 +106,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
 
                 Console.WriteLine();
                 Console.WriteLine($"Order Total: " +
-                    $"{OrderTotal(o.Id, items, products)}");
+                    $"{OrderTotal(o.Id)}");
                 Console.WriteLine();
             }
         }
@@ -141,7 +141,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
 
                 Console.WriteLine();
                 Console.WriteLine($"Order Total: " +
-                    $"{OrderTotal(o.Id, items, products)}");
+                    $"{OrderTotal(o.Id)}");
                 Console.WriteLine();
             }
         }
@@ -309,7 +309,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
                     var items = GetOrderItems(o.Id).ToList();
                     var products = GetOrderProducts(items);
 
-                    var orderTotal = OrderTotal(o.Id, items, products);
+                    var orderTotal = OrderTotal(o.Id);
 
                     temp += orderTotal;
                     count++;
@@ -349,7 +349,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
                     var items = GetOrderItems(o.Id).ToList();
                     var products = GetOrderProducts(items);
 
-                    var orderTotal = OrderTotal(o.Id, items, products);
+                    var orderTotal = OrderTotal(o.Id);
 
                     temp += orderTotal;
                 }
