@@ -108,7 +108,7 @@ ALTER TABLE OS.Orders ADD
 	ON DELETE CASCADE
 ALTER TABLE OS.Orders ADD
 	CONSTRAINT FK_Order_To_Customer FOREIGN KEY (CustomerID) REFERENCES OS.Customer (ID)
-	ON DELETE CASCADE
+	ON DELETE CASCAD
 
 ALTER TABLE OS.OrderItems ADD 
 	CONSTRAINT FK_OrderItems_To_Order FOREIGN KEY (OrderID) REFERENCES OS.Orders (ID)
@@ -139,13 +139,17 @@ INSERT INTO OS.Store (Name )
 	VALUES ('Primary Location')
 
 INSERT INTO OS.IProduct (Name, price )
-	VALUES ('PS4 Bundle (System, Game, Controller)', 349.99)
+	VALUES ('Nintendo Switch', 299.99)
+
+INSERT INTO OS.Inventory (StoreId, Quantity, ProductID )
+	VALUES (1, 10, 11)
 
 INSERT INTO OS.Customer (FirstName, LastName, Birthday, StoreID)
-	VALUES ('Conrad', 'Troha', '09-17-1990', 17)
+	VALUES ('Conrad', 'Troha', '09-17-1990', 1)
 
 
-
+INSERT INTO OS.Orders (StoreID, CustomerID, TimePlaced) 
+	VALUES (1, 3, '01-01-2018')
 
 
 
@@ -169,10 +173,11 @@ SELECT * FROM OS.OProduct
 
 
 DELETE FROM OS.OrderItems 
-DELETE FROM OS.Orders
+DELETE FROM OS.Orders 
 DELETE FROM OS.OProduct
 
 DELETE FROM OS.Inventory
+DELETE FROM OS.Iproduct
 DELETE FROM OS.Store
 
 DELETE FROM OS.Store

@@ -1,0 +1,109 @@
+﻿@model IEnumerable<VideoGameOrderSystem.App.Models.ViewModels.CartViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Order</h1>
+<h4>Logged in as: @Html.DisplayFor(model => model.First().Ivm.First().CustomerName)</h4>
+
+<p>
+    <a asp-action="AddToOrder" asp-route-id="@ViewBag.orderId">Add To Order</a>
+    <div></div>
+    <a asp-action="Delete" asp-route-id="@ViewBag.orderId">Remove From Order</a>
+</p>
+
+<p>
+    Inventory at @Html.DisplayFor(model => model.First().Ivm.First().StoreName)
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ivm.First().Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ivm.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ivm.First().Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ivm.First().Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.First().Ivm)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    Order Summary:
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<p>
+    Order Total: @Html.DisplayFor(modelItem => Model.First().Total)
+</p>
+
+<form asp-action="Submit" asp-route-id="@ViewBag.orderId">
+        <input type="submit" value="Submit" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>

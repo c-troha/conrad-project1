@@ -1,0 +1,35 @@
+﻿@model VideoGameOrderSystem.App.Models.ViewModels.RemoveInventoryViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to remove this?</h3>
+<div>
+    <h4>Orders</h4>
+    <hr />
+    <form asp-action="RemoveFromOrder">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ProductId" class="control-label"></label>
+            <input asp-for="ProductId" class="form-control" />
+            <span asp-validation-for="ProductId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Val" class="control-label"></label>
+            <input asp-for="Val" class="form-control" />
+            <span asp-validation-for="Val" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Remove" class="btn btn-primary" />
+        </div>
+    </form>
+    
+    @*<form asp-action="Delete">
+        <input type="hidden" asp-for="OrderId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>*@
+</div>

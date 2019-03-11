@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VideoGameOrderSystem.App.Models.ViewModels;
 using VideoGameOrderSystem.DataAccess;
 using Lib = VideoGameOrderSystem.Library;
 
 namespace VideoGameOrderSystem.App.Controllers
 {
-    [Route("Order/{id?}")]
     public class OrderController : Controller
     {
         public DataAccess.Repos.ICustomerRepository CustomerRepo { get; }
@@ -26,18 +26,31 @@ namespace VideoGameOrderSystem.App.Controllers
         }
 
         // GET: Order
-        public ActionResult Index([FromQuery]string search = "")
+        public ActionResult Index(int Id)
         {
-            //IEnumerable<Lib.Product> libProducts = StoreRepo.GetInventoryProducts();
-            //IEnumerable<Customer> webCustomers = libCustomers.Select(x => new Customer
-            //{
-            //    Id = x.Id,
-            //    FirstName = x.FirstName,
-            //    LastName = x.LastName,
-            //    Birthday = x.Birthday
-            //});
-            //return View(webCustomers);
-            return View();
+            if (CustomerRepo.ContainsId(Id))
+            {
+                ViewBag.customerId = Id;
+                Library.Customer customer = CustomerRepo.GetCustomerById(Id);
+                IEnumerable<Lib.Inventory> libInv = StoreRepo.GetInventory(customer.StoreId);
+                IEnumerable<Lib.Product> libProducts = StoreRepo.GetInventoryProducts(libInv);
+
+                IEnumerable<InventoryViewModel> ivm = libProducts.Select(x => new InventoryViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Price = (decimal)x.Price,
+                    Quantity = libInv.First(i => i.ProductId == x.Id && i.StoreId == customer.StoreId).Quantity,
+                    StoreName = StoreRepo.GetStoreById(customer.StoreId).Name,
+                    CustomerName = customer.FirstName + ' ' + customer.LastName
+                });
+                return View(ivm);
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         // GET: Order/Details/5
@@ -46,73 +59,44 @@ namespace VideoGameOrderSystem.App.Controllers
             return View();
         }
 
-        // GET: Order/Create
-        public ActionResult Create()
+        public ActionResult AddOrder()
         {
             return View();
         }
 
-        // POST: Order/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult AddOrder(int Id)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    Library.Customer customer = CustomerRepo.GetCustomerById(Id);
+                    OrderRepo.AddOrder(new Lib.Order
+                    {
+                        CustomerId = customer.Id,
+                        StoreId = customer.StoreId,
+                        TimePlaced = DateTime.Now
+                    });
 
-                return RedirectToAction(nameof(Index));
+                    var order = OrderRepo.GetAllOrders().Last();
+                    var inv = StoreRepo.GetInventoryProducts(StoreRepo.GetInventory(customer.StoreId));
+                    foreach (Lib.Product item in inv)
+                    {
+                        OrderRepo.AddProduct(order.Id, item);
+                    }
+
+                    return RedirectToAction("Index", "Cart", 
+                        new { @id = order.Id });
+                }
             }
             catch
             {
-                return View();
-            }
-        }
-
-        // GET: Order/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Order/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
-        // GET: Order/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Order/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
