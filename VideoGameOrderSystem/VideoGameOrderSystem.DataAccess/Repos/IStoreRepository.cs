@@ -23,5 +23,7 @@ namespace VideoGameOrderSystem.DataAccess.Repos
         void RemoveProduct(int storeId, int id);
         void AddToInventory(int storeId, int productId, int val);
         void RemoveFromInventory(int storeId, int productId, int val);
+
+        void Save();
     }
 }

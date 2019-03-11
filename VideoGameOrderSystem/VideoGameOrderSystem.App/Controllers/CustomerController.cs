@@ -80,6 +80,8 @@ namespace VideoGameOrderSystem.App
                     });
                     CustomerRepo.Save();
 
+
+
                     return RedirectToAction(nameof(Index));
                 }
                 return View(customer);

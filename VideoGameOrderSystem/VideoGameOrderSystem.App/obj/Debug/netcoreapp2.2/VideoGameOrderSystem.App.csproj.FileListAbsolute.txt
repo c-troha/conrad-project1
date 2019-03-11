@@ -42,3 +42,7 @@ C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.App\obj\De
 C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.App\obj\Debug\netcoreapp2.2\Razor\Views\Customer\Delete.g.cshtml.cs
 C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.App\obj\Debug\netcoreapp2.2\Razor\Views\Customer\Edit.g.cshtml.cs
 C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.App\obj\Debug\netcoreapp2.2\Razor\Views\Customer\Details.g.cshtml.cs
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.App\obj\Debug\netcoreapp2.2\Razor\Views\Store\Index.g.cshtml.cs
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.App\obj\Debug\netcoreapp2.2\Razor\Views\Store\Details.g.cshtml.cs
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.App\obj\Debug\netcoreapp2.2\Razor\Views\Store\Create.g.cshtml.cs
+C:\revature\conrad-project1\VideoGameOrderSystem\VideoGameOrderSystem.App\obj\Debug\netcoreapp2.2\Razor\Views\Store\Delete.g.cshtml.cs

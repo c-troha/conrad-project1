@@ -18,7 +18,6 @@ namespace VideoGameOrderSystem.DataAccess.Repos
         public void AddStore(Library.Location store)
         {
             _dbContext.Add(Mapping.Map(store));
-            _dbContext.SaveChanges();
         }
 
         public IEnumerable<Library.Location> GetAllStores()
@@ -53,7 +52,6 @@ namespace VideoGameOrderSystem.DataAccess.Repos
                 }
 
                 _dbContext.Remove(_dbContext.Store.First(s => s.Id == id));
-                _dbContext.SaveChanges();
             }
             else
             {
@@ -108,13 +106,11 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             inventory.Quantity = 0;
 
             _dbContext.Add(Mapping.Map(inventory));
-            _dbContext.SaveChanges();
         }
 
         public void RemoveInventory(int storeId, int productId)
         {
             _dbContext.Remove(_dbContext.Inventory.First(i => i.ProductId == productId && i.StoreId == storeId));
-            _dbContext.SaveChanges();
         }
 
         public void AddProduct(int storeId)
@@ -152,7 +148,6 @@ namespace VideoGameOrderSystem.DataAccess.Repos
             }
 
             _dbContext.Add(Mapping.MapI(product));
-            _dbContext.SaveChanges();
 
             var newProduct = _dbContext.Iproduct.Last();
 
@@ -167,7 +162,6 @@ namespace VideoGameOrderSystem.DataAccess.Repos
 
                 RemoveInventory(storeId, product.Id);
                 _dbContext.Remove(_dbContext.Iproduct.First(p => p.Id == id));
-                _dbContext.SaveChanges();
             }
             else
             {
@@ -178,7 +172,6 @@ namespace VideoGameOrderSystem.DataAccess.Repos
         public void AddToInventory(int storeId, int productId, int val)
         {
             _dbContext.Inventory.First(i => i.ProductId == productId && i.StoreId == storeId).Quantity += val;
-            _dbContext.SaveChanges();
         }
 
         public void RemoveFromInventory(int storeId, int productId, int val)
@@ -190,8 +183,11 @@ namespace VideoGameOrderSystem.DataAccess.Repos
                 inventory.Quantity -= val;
             }
 
-            _dbContext.SaveChanges();
         }
 
+        public void Save()
+        {
+            _dbContext.SaveChanges();
+        }
     }
 }

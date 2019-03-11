@@ -15,8 +15,9 @@ namespace VideoGameOrderSystem.App.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult InputId()
         {
+
             return View();
         }
 
