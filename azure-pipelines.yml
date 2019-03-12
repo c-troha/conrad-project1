@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  solutionPath: './'
+  solutionPath: "./VideoGameOrderSystem"
 
 steps:
 - script: dotnet build "$(solutionPath)" --configuration $(buildConfiguration)
